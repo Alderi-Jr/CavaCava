@@ -8,9 +8,9 @@ set(SFML_DIR "C:/Tools/SFML/lib/cmake/SFML")
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 
-add_executable(GridWorld main.cpp
-        Grid.cpp
-        Grid.h
+add_executable(GridWorld src/main.cpp
+        src/Grid.cpp
+        src/Grid.h
 )
 
 target_link_libraries(GridWorld
