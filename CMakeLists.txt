@@ -10,7 +10,8 @@ find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 
 add_executable(GridWorld main.cpp
         Grid.cpp
-        Grid.h)
+        Grid.h
+)
 
 target_link_libraries(GridWorld
         sfml-graphics

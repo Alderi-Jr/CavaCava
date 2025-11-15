@@ -2,14 +2,25 @@
 #include "Grid.h"
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(600, 600), "CavaCava");
+    const int cellSize = 40;
+    const int rows = 10;
+    const int cols = 10;
 
-    Grid grid(20, 20, 30);
-    grid.setCell(5, 5, CellType::Player);
-    grid.setCell(7, 10, CellType::Zombie);
+    sf::RenderWindow window(
+        sf::VideoMode(cols * cellSize, rows * cellSize),
+        "GridWorld - Base"
+    );
+
+    Grid grid(rows, cols, cellSize);
+
+    // Exemplos de células
+    grid.setCell(2, 2, CellType::Agent);
+    grid.setCell(4, 4, CellType::Supply);
+    grid.setCell(5, 5, CellType::Zombie);
+    grid.setCell(0, 0, CellType::Wall);
 
     while (window.isOpen()) {
-        sf::Event event;
+        sf::Event event{};
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
